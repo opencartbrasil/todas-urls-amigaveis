@@ -30,9 +30,11 @@ O único item que não utilizará a url amigável desta modificação é busca p
 catalog/view/javascript/common.js (tema padrão do OpenCart)
 
 Edite o arquivo acima e localize a linha de código abaixo:
+
 url = $('base').attr('href') + 'index.php?route=product/search';
 
 E modifique para:
+
 url = $('base').attr('href') + 'busca';
 
 Salve as alterações no arquivo e limpe o cache do seu navegador para remover a versão em cache do arquivo common.js.
