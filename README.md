@@ -23,6 +23,20 @@ Para desinstalar a modificação, na administração da loja, acesse o menu Exte
 
 Após a instalação nenhuma outra configuração é necessária.
 
+### Observações
+
+O único item que não utilizará a url amigável desta modificação é busca padrão do OpenCart, pois ao executar uma busca na loja, o evento é disparado através de um código jQuery que está no arquivo:
+
+catalog/view/javascript/common.js (tema padrão do OpenCart)
+
+Edite o arquivo acima e localize a linha de código abaixo:
+url = $('base').attr('href') + 'index.php?route=product/search';
+
+E modifique para:
+url = $('base').attr('href') + 'busca';
+
+Salve as alterações no arquivo e limpe o cache do seu navegador para remover a versão em cache do arquivo common.js.
+
 ### Dúvidas
 
 O OCMod (OpenCart Modification) é nativo do OpenCart, ou seja, não é necessário instalar nenhum complemento no OpenCart para utilizar modificações ou extensões no formato OCMod, para mais informações sobre o OCMod, segue o link:
