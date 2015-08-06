@@ -14,6 +14,25 @@ Caso deseje doar um valor para contribuir com este trabalho continuo e sempre gr
  2. Na administração da loja acesse o menu Extensions->Extension Installer (Extensões->Instalador).
  3. Na página do instalador, clique no botão Upload e selecione o arquivo 'todas-urls-amigaveis.ocmod.zip' (que você baixou deste repositório), e aguarde a conclusão da instalação automática.
  5. Após a instalação, acesse o menu Extensions->Modifications (Extensões->Modificações) e clique no botão Refresh (Atualizar), para que a modificação instalada seja incrementada na loja, lembrando que não é o botão "Atualizar" do navegador, e sim o botão "Atualizar" na cor azul ao lado do botão laranja e vermelho na tela do próprio OpenCart.
+ 
+### Corrigindo erro no carrinho
+
+Assumindo que seu tema utiliza a mesma base do tema padrão do OpenCart, você precisa fazer uma modificação no arquivo catalog/view/javascript/common.js
+
+No arquivo common.js, localize as linhas:
+location = 'index.php?route=checkout/cart';
+
+E substitua por:
+location = 'carrinho';
+
+Localize as linhas:
+if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+
+E substitua por:
+var getURlRewrite = $(location).attr('href').split('/').pop();
+if (getURlRewrite == 'carrinho' || getURlRewrite == 'finalizar-pedido') {
+
+Salve as alterações no arquivo e limpe o cache do seu navegador.
 
 ### Desinstalar
 
