@@ -20,16 +20,21 @@ Caso deseje doar um valor para contribuir com este trabalho continuo e sempre gr
 Assumindo que seu tema utiliza a mesma base do tema padrão do OpenCart, você precisa fazer uma modificação no arquivo catalog/view/javascript/common.js
 
 No arquivo common.js, localize as linhas:
+
 location = 'index.php?route=checkout/cart';
 
 E substitua por:
+
 location = 'carrinho';
 
 Localize as linhas:
+
 if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
 
 E substitua por:
+
 var getURlRewrite = $(location).attr('href').split('/').pop();
+
 if (getURlRewrite == 'carrinho' || getURlRewrite == 'finalizar-pedido') {
 
 Salve as alterações no arquivo e limpe o cache do seu navegador.
