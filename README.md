@@ -15,29 +15,49 @@ Caso deseje doar um valor para contribuir com este trabalho continuo e sempre gr
  3. Na página do instalador, clique no botão Upload e selecione o arquivo 'todas-urls-amigaveis.ocmod.zip' (que você baixou deste repositório), e aguarde a conclusão da instalação automática.
  5. Após a instalação, acesse o menu Extensions->Modifications (Extensões->Modificações) e clique no botão Refresh (Atualizar), para que a modificação instalada seja incrementada na loja, lembrando que não é o botão "Atualizar" do navegador, e sim o botão "Atualizar" na cor azul ao lado do botão laranja e vermelho na tela do próprio OpenCart.
  
-### Corrigindo erro no carrinho
+#### Corrigindo erro no carrinho e na busca
 
 Assumindo que seu tema utiliza a mesma base do tema padrão do OpenCart, você precisa fazer uma modificação no arquivo catalog/view/javascript/common.js
 
 No arquivo common.js, localize as linhas:
 
-location = 'index.php?route=checkout/cart';
+Localize as linhas:
+
+```js
+if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+ location = 'index.php?route=checkout/cart';
+} else {
+ $('#cart > ul').load('index.php?route=common/cart/info ul li');
+}
+```
 
 E substitua por:
 
-location = 'carrinho';
+```js
+var getURlRewrite = $(location).attr('href').split('/').pop();
+
+if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+ location = 'index.php?route=checkout/cart';
+} else if (getURlRewrite == 'carrinho' || getURlRewrite == 'finalizar-pedido') {
+ location = 'carrinho';
+} else {
+ $('#cart > ul').load('index.php?route=common/cart/info ul li');
+}
+```
 
 Localize as linhas:
 
-if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+```js
+url = $('base').attr('href') + 'index.php?route=product/search';
+```
 
 E substitua por:
 
-var getURlRewrite = $(location).attr('href').split('/').pop();
+```js
+url = $('base').attr('href') + 'busca';
+```
 
-if (getURlRewrite == 'carrinho' || getURlRewrite == 'finalizar-pedido') {
-
-Salve as alterações no arquivo e limpe o cache do seu navegador.
+Salve as alterações no arquivo e limpe o cache do seu navegador para remover a versão em cache do arquivo common.js.
 
 ### Desinstalar
 
@@ -46,22 +66,6 @@ Para desinstalar a modificação, na administração da loja, acesse o menu Exte
 ### Utilização
 
 Após a instalação nenhuma outra configuração é necessária.
-
-### Observações
-
-O único item que não utilizará a url amigável desta modificação é busca padrão do OpenCart, pois ao executar uma busca na loja, o evento é disparado através de um código jQuery que está no arquivo:
-
-catalog/view/javascript/common.js (tema padrão do OpenCart)
-
-Edite o arquivo acima e localize a linha de código abaixo:
-
-url = $('base').attr('href') + 'index.php?route=product/search';
-
-E modifique para:
-
-url = $('base').attr('href') + 'busca';
-
-Salve as alterações no arquivo e limpe o cache do seu navegador para remover a versão em cache do arquivo common.js.
 
 ### Dúvidas
 
