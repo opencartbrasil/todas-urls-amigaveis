@@ -19,9 +19,7 @@ Caso deseje doar um valor para contribuir com este trabalho continuo e sempre gr
 
 Assumindo que seu tema utiliza a mesma base do tema padrão do OpenCart, você precisa fazer uma modificação no arquivo catalog/view/javascript/common.js
 
-No arquivo common.js, localize as linhas:
-
-Localize as linhas:
+No arquivo common.js, localize as linhas de código abaixo:
 
 ```js
 if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -31,27 +29,27 @@ if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/che
 }
 ```
 
-E substitua por:
+E substitua todas as ocorrências delas pelas linhas de código abaixo:
 
 ```js
 var getURlRewrite = $(location).attr('href').split('/').pop();
 
 if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
  location = 'index.php?route=checkout/cart';
-} else if (getURlRewrite == 'carrinho' || getURlRewrite == 'finalizar-pedido') {
+} else if (getURlRewrite == 'carrinho' || getURlRewrite == 'finalizar') {
  location = 'carrinho';
 } else {
  $('#cart > ul').load('index.php?route=common/cart/info ul li');
 }
 ```
 
-Localize as linhas:
+Localize a linha de código abaixo:
 
 ```js
 url = $('base').attr('href') + 'index.php?route=product/search';
 ```
 
-E substitua por:
+E substitua todas as ocorrências dela pela linha de código abaixo:
 
 ```js
 url = $('base').attr('href') + 'busca';
@@ -61,7 +59,7 @@ Salve as alterações no arquivo e limpe o cache do seu navegador para remover a
 
 ### Desinstalar
 
-Para desinstalar a modificação, na administração da loja, acesse o menu Extensions->Modifications (Extensões->Modificações) e selecione a modificação com o nome 'Transforma todas as urls padrões da loja em urls amigáveis.', depois clique no botão Delete (Excluir), e no botão Refresh (Atualizar).
+Para desinstalar a modificação, na administração da loja, acesse o menu Extensions->Modifications (Extensões->Modificações) e selecione a modificação com o nome 'Todas as URLs amigáveis', depois clique no botão Delete (Excluir), e no botão Refresh (Atualizar).
 
 ### Utilização
 
