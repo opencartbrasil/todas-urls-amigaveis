@@ -75,7 +75,7 @@ O OCMod (OpenCart Modification) é nativo do OpenCart, ou seja, não é necessá
 
 https://github.com/opencart/opencart/wiki/Modification-System
 
-### Os arquivos alterados virtualmente através do OCMod são:
+### O arquivo alterado virtualmente através do OCMod é:
 
 catalog/controller/common/seo_url.php
 
