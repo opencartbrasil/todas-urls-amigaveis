@@ -14,6 +14,10 @@ Caso deseje doar um valor para contribuir com este trabalho continuo e sempre gr
  2. Na administração da loja acesse o menu Extensions->Extension Installer (Extensões->Instalador).
  3. Na página do instalador, clique no botão Upload e selecione o arquivo 'todas-urls-amigaveis.ocmod.zip' (que você baixou deste repositório), e aguarde a conclusão da instalação automática.
  5. Após a instalação, acesse o menu Extensions->Modifications (Extensões->Modificações) e clique no botão Refresh (Atualizar), para que a modificação instalada seja incrementada na loja, lembrando que não é o botão "Atualizar" do navegador, e sim o botão "Atualizar" na cor azul ao lado do botão laranja e vermelho na tela do próprio OpenCart.
+
+### Configuração
+
+Após a instalação nenhuma configuração é necessária.
  
 #### Corrigindo erro no carrinho e na busca
 
@@ -57,13 +61,13 @@ url = $('base').attr('href') + 'busca';
 
 Salve as alterações no arquivo e limpe o cache do seu navegador para remover a versão em cache do arquivo common.js.
 
-### Desinstalar
+### Desinstalação
 
 Para desinstalar a modificação, na administração da loja, acesse o menu Extensions->Modifications (Extensões->Modificações) e selecione a modificação com o nome 'Todas as URLs amigáveis', depois clique no botão Delete (Excluir), e no botão Refresh (Atualizar).
 
-### Utilização
+### Atualização
 
-Após a instalação nenhuma outra configuração é necessária.
+Acesse a administração da loja e execute o procedimento de Desinstalação, depois execute o procedimento de Instalação.
 
 ### Dúvidas
 
