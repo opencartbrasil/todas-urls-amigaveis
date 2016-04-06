@@ -77,7 +77,13 @@ https://github.com/opencart/opencart/wiki/Modification-System
 
 ### O arquivo alterado virtualmente através do OCMod é:
 
+Até a versão 2.1.0.2:
+
 catalog/controller/common/seo_url.php
+
+Após a versão 2.1.0.2:
+
+catalog/controller/startup/seo_url.php
 
 ### Como contribuir
 
