@@ -2,12 +2,12 @@
 <modification>
   <name>Todas as URLs amigáveis</name>
   <code>todas-urls-amigaveis</code>
-  <version>1.2</version>
+  <version>1.3</version>
   <author>OpenCart Brasil</author>
   <link>http://www.opencartbrasil.com.br</link>
-  <file path="catalog/controller/common/seo_url.php">
+  <file path="catalog/controller/startup/seo_url.php">
 	<operation>
-	  <search><![CDATA[class ControllerCommonSeoUrl extends Controller {]]></search>
+	  <search><![CDATA[class ControllerStartupSeoUrl extends Controller {]]></search>
 	  <add position="after">
 			<![CDATA[
 	private $urlCustom = array (
