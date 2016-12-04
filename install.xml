@@ -2,84 +2,86 @@
 <modification>
   <name>Todas as URLs amigáveis</name>
   <code>todas-urls-amigaveis</code>
-  <version>1.3</version>
+  <version>1.4</version>
   <author>OpenCart Brasil</author>
   <link>http://www.opencartbrasil.com.br</link>
   <file path="catalog/controller/startup/seo_url.php">
-	<operation>
-	  <search><![CDATA[class ControllerStartupSeoUrl extends Controller {]]></search>
-	  <add position="after">
-			<![CDATA[
-	private $urlCustom = array (
-		'common/home' => '',
-		'account/account' => 'conta',
-		'account/wishlist' => 'conta/lista-desejos',
-		'account/register' => 'conta/cadastro',
-		'account/login' => 'conta/acessar',
-		'account/forgotten' => 'conta/solicitar-senha',
-		'account/edit' => 'conta/informacoes',
-		'account/password' => 'conta/modificar-senha',
-		'account/address' => 'conta/enderecos',
-		'account/address/info' => 'conta/enderecos/editar',
-		'account/address/add' => 'conta/enderecos/cadastro',
-		'account/reward' => 'conta/pontos',
-		'account/logout' => 'conta/sair',
-		'account/order' => 'conta/historico',
-		'account/order/info' => 'conta/historico/informacoes',
-		'account/newsletter' => 'conta/informativo',
-		'account/download' => 'conta/downloads',
-		'account/transaction' => 'conta/creditos',
-		'account/recurring' => 'conta/assinaturas',
-		'account/return' => 'conta/devolucoes',
-		'account/return/add' => 'devolucoes/cadastro',
-		'account/return/success' => 'devolucoes/confirmacao',
-		'account/voucher' => 'vale-presentes/comprar',
-		'account/voucher/success' => 'vale-presentes/confirmacao',
-		'affiliate/account' => 'afiliados/conta',
-		'affiliate/edit' => 'afiliados/editar',
-		'affiliate/password' => 'afiliados/modificar-senha',
-		'affiliate/payment' => 'afiliados/informacoes',
-		'affiliate/tracking' => 'afiliados/gerador-links',
-		'affiliate/transaction' => 'afiliados/creditos',
-		'affiliate/logout' => 'afiliados/sair',
-		'affiliate/forgotten' => 'afiliados/solicitar-senha',
-		'affiliate/register' => 'afiliados/cadastro',
-		'affiliate/login' => 'afiliados/acessar',
-		'checkout/cart' => 'carrinho',
-		'checkout/checkout' => 'carrinho/finalizar',
-		'checkout/success' => 'carrinho/finalizar/confirmacao',
-		'information/contact' => 'contato',
-		'information/contact/success' => 'contato/enviado',
-		'information/sitemap' => 'mapa-site',
-		'product/special' => 'promocoes',
-		'product/manufacturer' => 'marcas',
-		'product/compare' => 'comparacao-produtos',
-		'product/search' => 'busca'	
-	);
-		]]>
-	  </add>
-	</operation>
-	<operation>
-	  <search><![CDATA[$this->request->get['route'] = 'error/not_found';]]></search>
-	  <add position="replace">
-			<![CDATA[if (in_array($this->request->get['_route_'], $this->urlCustom)) {
-						$this->request->get['route'] = array_search($this->request->get['_route_'], $this->urlCustom);
-					} else {
-						$this->request->get['route'] = 'error/not_found';
-					}]]>
-	  </add>
-	</operation>
-	<operation>
-	  <search index="1"><![CDATA[unset($data[$key]);]]></search>
-	  <add position="replace">
-			<![CDATA[unset($data[$key]);
-				} else {
-					$this->urlCustom = array_flip($this->urlCustom);
-					if (in_array($data['route'], $this->urlCustom)) {
-						$url = '/' . array_search($data['route'], $this->urlCustom);
-					}
-					$this->urlCustom = array_flip($this->urlCustom);]]>
-	  </add>
-	</operation>
+    <operation>
+      <search><![CDATA[class ControllerStartupSeoUrl extends Controller {]]></search>
+      <add position="after">
+            <![CDATA[
+    private $urlCustom = array (
+        'common/home' => '',
+        'account/account' => 'conta',
+        'account/wishlist' => 'conta/lista-desejos',
+        'account/register' => 'conta/cadastro',
+        'account/login' => 'conta/acessar',
+        'account/forgotten' => 'conta/solicitar-senha',
+        'account/edit' => 'conta/informacoes',
+        'account/password' => 'conta/modificar-senha',
+        'account/address' => 'conta/enderecos',
+        'account/address/info' => 'conta/enderecos/editar',
+        'account/address/add' => 'conta/enderecos/cadastro',
+        'account/reward' => 'conta/pontos',
+        'account/logout' => 'conta/sair',
+        'account/order' => 'conta/historico',
+        'account/order/info' => 'conta/historico/informacoes',
+        'account/newsletter' => 'conta/informativo',
+        'account/download' => 'conta/downloads',
+        'account/transaction' => 'conta/creditos',
+        'account/recurring' => 'conta/assinaturas',
+        'account/return' => 'conta/devolucoes',
+        'account/return/add' => 'devolucoes/cadastro',
+        'account/return/success' => 'devolucoes/confirmacao',
+        'account/voucher' => 'vale-presentes/comprar',
+        'account/voucher/success' => 'vale-presentes/confirmacao',
+        'affiliate/account' => 'afiliados/conta',
+        'affiliate/edit' => 'afiliados/editar',
+        'affiliate/password' => 'afiliados/modificar-senha',
+        'affiliate/payment' => 'afiliados/informacoes',
+        'affiliate/tracking' => 'afiliados/gerador-links',
+        'affiliate/transaction' => 'afiliados/creditos',
+        'affiliate/logout' => 'afiliados/sair',
+        'affiliate/forgotten' => 'afiliados/solicitar-senha',
+        'affiliate/register' => 'afiliados/cadastro',
+        'affiliate/login' => 'afiliados/acessar',
+        'checkout/cart' => 'carrinho',
+        'checkout/checkout' => 'carrinho/finalizar',
+        'checkout/success' => 'carrinho/finalizar/confirmacao',
+        'information/contact' => 'contato',
+        'information/contact/success' => 'contato/enviado',
+        'information/sitemap' => 'mapa-site',
+        'product/special' => 'promocoes',
+        'product/manufacturer' => 'marcas',
+        'product/compare' => 'comparacao-produtos',
+        'product/search' => 'busca'
+    );
+]]>
+      </add>
+    </operation>
+    <operation>
+      <search><![CDATA[$this->request->get['route'] = 'error/not_found';]]></search>
+      <add position="replace">
+            <![CDATA[if (in_array($this->request->get['_route_'], $this->urlCustom)) {
+                        $this->request->get['route'] = array_search($this->request->get['_route_'], $this->urlCustom);
+                    } else {
+                        $this->request->get['route'] = 'error/not_found';
+                    }]]>
+      </add>
+    </operation>
+    <operation>
+      <search index="1"><![CDATA[unset($data[$key]);]]></search>
+      <add position="replace">
+            <![CDATA[unset($data[$key]);
+                } else {
+                    $this->urlCustom = array_flip($this->urlCustom);
+
+                    if (in_array($data['route'], $this->urlCustom)) {
+                        $url = '/' . array_search($data['route'], $this->urlCustom);
+                    }
+
+                    $this->urlCustom = array_flip($this->urlCustom);]]>
+      </add>
+    </operation>
   </file>
 </modification>
