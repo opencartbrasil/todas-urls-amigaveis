@@ -10,9 +10,10 @@ Caso deseje doar um valor para contribuir com este trabalho continuo e sempre gr
 
 ### Instalação
 
- 1. Baixe a modificação no link: https://github.com/opencartbrasil/todas-url-amigaveis/releases. Localize a versão mais atual e compatível do arquivo "todas-url-amigaveis.ocmod.zip".
- 2. Na administração da loja acesse o menu Extensions->Extension Installer (Extensões->Instalador).
- 3. Na página do instalador, clique no botão Upload e selecione o arquivo 'todas-urls-amigaveis.ocmod.zip' (que você baixou deste repositório), e aguarde a conclusão da instalação automática.
+ 1. Acesse o link: https://github.com/opencartbrasil/todas-url-amigaveis/releases.
+ 2. Localize a versão mais atual e compatível com sua versão do OpenCart, e faça o download do arquivo "todas-url-amigaveis.ocmod.zip".
+ 3. Na administração da loja acesse o menu Extensions->Extension Installer (Extensões->Instalador).
+ 4. Na página do instalador, clique no botão Upload e selecione o arquivo 'todas-urls-amigaveis.ocmod.zip' (que você baixou deste repositório), e aguarde a conclusão da instalação automática.
  5. Após a instalação, acesse o menu Extensions->Modifications (Extensões->Modificações) e clique no botão Refresh (Atualizar), para que a modificação instalada seja incrementada na loja, lembrando que não é o botão "Atualizar" do navegador, e sim o botão "Atualizar" na cor azul ao lado do botão laranja e vermelho na tela do próprio OpenCart.
 
 ### Configuração
