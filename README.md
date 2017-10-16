@@ -12,7 +12,7 @@ Caso deseje doar um valor para contribuir com este trabalho continuo e sempre gr
 
 ### Instalação
 
- 1. Acesse o link: https://github.com/opencartbrasil/todas-url-amigaveis/releases.
+ 1. Acesse o link: https://github.com/opencartbrasil/todas-urls-amigaveis/releases.
  2. Localize a versão mais atual e compatível com sua versão do OpenCart, e faça o download do arquivo "todas-url-amigaveis.ocmod.zip".
  3. Na administração da loja acesse o menu Extensões→Instalador (Extensions→Installer).
  4. Na página do instalador, clique no botão Upload e selecione o arquivo 'todas-urls-amigaveis.ocmod.zip' (que você baixou deste repositório), e aguarde a conclusão da instalação automática.
@@ -77,16 +77,6 @@ Acesse a administração da loja e execute o procedimento de Desinstalação, de
 O OCMOD (OpenCart Modification) é nativo do OpenCart, ou seja, não é necessário instalar nenhum complemento no OpenCart para utilizar modificações ou extensões no formato OCMOD, para mais informações sobre o OCMOD, segue o link para mais informações:
 
 https://github.com/opencart/opencart/wiki/Modification-System
-
-### O arquivo alterado virtualmente através do OCMOD é:
-
-Até a versão 2.1.0.2:
-
-catalog/controller/common/seo_url.php
-
-Após a versão 2.1.0.2:
-
-catalog/controller/startup/seo_url.php
 
 [licenca-badge]: https://img.shields.io/badge/licença-GPLv3-blue.svg
 [LICENSE]: ./LICENSE
