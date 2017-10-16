@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modification>
-  <name>Todas as URLs amigáveis para OpenCart 2.0 e 2.1</name>
+  <name>Todas as URLs amigáveis para OpenCart 2.2 e 2.3</name>
   <code>todas-urls-amigaveis</code>
-  <version>1.6.0</version>
+  <version>2.0.0</version>
   <author>OpenCart Brasil</author>
   <link>http://www.opencartbrasil.com.br</link>
-  <file path="catalog/controller/common/seo_url.php">
+  <file path="catalog/controller/startup/seo_url.php">
     <operation>
-      <search><![CDATA[class ControllerCommonSeoUrl extends Controller {]]></search>
+      <search><![CDATA[class ControllerStartupSeoUrl extends Controller {]]></search>
       <add position="after"><![CDATA[
         private $new_urls = array (
             'common/home' => '',
