@@ -73,7 +73,6 @@
                 $url = '/' . array_search($data['route'], $this->new_urls);
             }
             $this->new_urls = array_flip($this->new_urls);
-            unset($data[$key]);
       ]]></add>
     </operation>
   </file>
