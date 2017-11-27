@@ -2,7 +2,7 @@
 <modification>
   <name>Todas as URLs amigáveis para OpenCart 3.0.x</name>
   <code>todas-urls-amigaveis</code>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <author>OpenCart Brasil</author>
   <link>http://www.opencartbrasil.com.br</link>
   <file path="catalog/controller/startup/seo_url.php">
