@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modification>
-  <name>Todas as URLs amigáveis para OpenCart 3.0.x</name>
+  <name>Todas as URLs amigáveis para OpenCart 3.1.0.0b</name>
   <code>todas-urls-amigaveis</code>
-  <version>3.0.1</version>
+  <version>3.1.0.0b</version>
   <author>OpenCart Brasil</author>
   <link>http://www.opencartbrasil.com.br</link>
   <file path="catalog/controller/startup/seo_url.php">
@@ -64,16 +64,22 @@
       ]]></add>
     </operation>
     <operation>
-      <search index="1"><![CDATA[unset($data[$key]);]]></search>
-      <add position="replace"><![CDATA[
-            unset($data[$key]);
-        } else {
+      <search index="1"><![CDATA[if ($query->num_rows) {]]></search>
+      <add position="replace"><![CDATA[                
+          if (!$query->num_rows) {
             $this->new_urls = array_flip($this->new_urls);
-            if (in_array($data['route'], $this->new_urls)) {
-                $url = '/' . array_search($data['route'], $this->new_urls);
+            if (isset($data['route']) && in_array($data['route'], $this->new_urls)) {
+              $url = '/' . array_search($data['route'], $this->new_urls);
             }
             $this->new_urls = array_flip($this->new_urls);
+          }else{
       ]]></add>
+    </operation>
+    <operation>
+      <search><![CDATA[$query = '';]]></search>
+      <add position="after"><![CDATA[
+        unset($data['route']);
+        ]]></add>
     </operation>
   </file>
 </modification>
