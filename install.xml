@@ -68,7 +68,7 @@
       <add position="replace"><![CDATA[                
           if (!$query->num_rows) {
             $this->new_urls = array_flip($this->new_urls);
-            if (in_array($data['route'], $this->new_urls)) {
+            if (isset($data['route']) && in_array($data['route'], $this->new_urls)) {
               $url = '/' . array_search($data['route'], $this->new_urls);
             }
             $this->new_urls = array_flip($this->new_urls);
